@@ -1,0 +1,268 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #d4fc79, #96e6a1);
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Container */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 80px;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Heading */
+h1, h2 {
+    text-align: center;
+    color: #2d6a4f;
+}
+
+/* Form Elements */
+label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #2d6a4f;
+    box-shadow: 0 0 8px rgba(45, 106, 79, 0.5);
+}
+
+/* Gender Selection */
+.gender {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gender input[type="radio"] {
+    display: none;
+}
+
+.gender label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Custom Radio Button */
+.gender label::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border: 2px solid #2d6a4f;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.3s;
+}
+
+/* Selected Radio Button */
+.gender input[type="radio"]:checked + label::before {
+    background: #2d6a4f;
+    border-color: #2d6a4f;
+}
+
+.gender input[type="radio"]:checked + label::after {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+}
+
+/* Buttons */
+input[type="submit"], .back-btn {
+    background-color: #2d6a4f;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"]:hover, .back-btn:hover {
+    background-color: #0474c5;
+    transform: scale(1.05);
+}
+
+img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Success Page */
+.success-container {
+    text-align: left;
+    background: white;
+    padding: 30px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.success-container h1 {
+    color: #1b4332;
+    font-size: 28px;
+    text-align: left;
+}
+
+.success-container p {
+    margin: 20px 0;
+    margin-left: 5px;
+}
+
+/* Button Section */
+.last-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 2px;
+}
+
+/* Buttons */
+.last-btn a {
+    text-decoration: none; /* Remove underline */
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+    cursor: pointer;
+    width: 140px; /* Same size for both buttons */
+}
+
+/* Different Button Colors */
+.last-btn .back-btn {
+    background-color: #2d6a4f;
+    color: white;
+    border-color: #1b4332;
+}
+
+.last-btn .continue-btn {
+    background-color: #0474c5;
+    color: white;
+    border-color: #03569b;
+}
+
+/* Hover Effect */
+.last-btn .back-btn:hover {
+    background-color: #339cec;
+    border-color: #ff4278;
+    transform: scale(1.05);
+}
+
+/* .last-btn .continue-btn:hover {
+    background-color: #03569b;
+    border-color: #2d6a4f;
+    transform: scale(1.05);
+} */
+
+/* Button Animation */
+@keyframes buttonPop {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.last-btn a {
+    animation: buttonPop 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin-top: 30px;
+    }
+    /* .back-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+    } */
+    img {
+        height: 280px;
+    }
+    .success-container {
+        padding: 20px;
+    }
+
+    .last-btn {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .last-btn a {
+        width: 100%; /* Full width buttons */
+        padding: 14px;
+    }
+}
